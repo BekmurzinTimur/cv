@@ -16,6 +16,12 @@ class App extends React.Component {
   state = {
     cards: [
       {
+        title: 'Route editor',
+        description: 'Here you can get the route by typing the adresses. You can change the order of them and change the location using drag and drop',
+        url_pages: 'https://bekmurzintimur.github.io/level2',
+        url_repository: 'https://github.com/BekmurzinTimur/level2',
+      },
+      {
         title: 'To-Do List',
         description: 'This project was made using plain JavaScript. I implemented such features as: Drag and Drop,local storage, archive of completed tasks and ctrl+z undo.',
         url_pages: 'https://bekmurzintimur.github.io/to-do-list',
@@ -56,7 +62,7 @@ class App extends React.Component {
 
   cards = <div className="cards_container">{
     this.state.cards.map((card, index) => {
-      return <Card card_info={card} key={index} index={index}/>
+      return <Card card_info={card} key={index} index={this.state.cards.length - 1 -index}/>
     })}
   </div>;
 
